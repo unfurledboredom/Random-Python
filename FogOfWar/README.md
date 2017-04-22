@@ -11,9 +11,9 @@ The list of URLs can be changed to anything you like. When at a site, it will ra
 Counter Intelligence 101: Put HTTP URLs because your ISPs can see ALL the data transmitted using HTTP. They are more likely to use this data than HTTPS data. With HTTPS, they can only see where you are going(i.e Google, Facebook and so on) not what you are doing. 
 
 Running it is simple. 
-*Install Python
-*Download the script
-*Run the script with a # indicating where you would like it to start. ```python fogofweb.py 2```
-*Sit back, and watch it go around the internet. 
+* Install Python
+* Download the script
+* Run the script with a # indicating where you would like it to start. ```python fogofweb.py 2```
+* Sit back, and watch it go around the internet. 
 
 It will run as long as you let it run. 
