@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Shortner</title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.js">
+	</script>
+</head>
+<body>
+	<div class="w3-container w3-teal">
+		<h1>URL Shortner</h1>
+	</div>
+	<div class="w3-container">
+		<p><label>URL:</label> <input class="w3-input" id="url" name="url" type="text"></p><a class="w3-btn w3-blue" id="generate" onclick="generateURL();">Generate URL</a><br>
+		<br>
+		<div class="w3-container w3-teal" id="resultContainer" style="display: none;">
+			<p>Shortened Url: <input class="w3-input w3-border w3-light-grey" disabled="true" id="result" name="result" type="text"></p>
+			<p>Metrics: <input class="w3-input w3-border w3-light-grey" disabled="true" id="metrics" name="metrics" type="text"></p>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	    var ROOT_URL = "http://localhost:5000/";
+
+		function generateURL() {
+			var parameters = {
+				"url": $('#url').val()
+			};
+			$.ajax({
+				url: ROOT_URL + "api/",
+				type: 'POST',
+				crossDomain: true,
+				contentType: 'application/json',
+				data: JSON.stringify(parameters),
+				success: function(data) {
+					$('#resultContainer').attr("style", "display: block");
+					$('#result').val(ROOT_URL + data.url);
+					$('#metrics').val(ROOT_URL + 'stats/' + data.url);
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					console.log(thrownError)
+				}
+			});
+		}
+	</script>
+</body>
+</html>

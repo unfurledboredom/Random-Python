@@ -1,0 +1,101 @@
+{
+    "folders": [],
+    "name": "URL Shortner",
+    "timestamp": 1535305414747,
+    "requests": [
+        {
+            "dataMode": "params",
+            "description": "Accepts a GET request for a shortened url.\nIt decodes the base64 string and looks it up in the database\nIf found, it will save the visitor information and redirect the visitor to the URL",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/{{encoded_url}}",
+            "headers": "",
+            "time": 1535305414748,
+            "id": "c1e66110-848f-4387-88e4-a66d2ada3ea5",
+            "data": [],
+            "method": "GET",
+            "name": "decoded url"
+        },
+        {
+            "dataMode": "params",
+            "description": "",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/api/",
+            "headers": "",
+            "time": 1535305414747,
+            "id": "07fe9980-75b3-4d42-8a8d-b930e257f68a",
+            "data": [],
+            "method": "GET",
+            "name": "request"
+        },
+        {
+            "dataMode": "params",
+            "description": "",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/",
+            "headers": "",
+            "time": 1535305414747,
+            "id": "3493d466-49bf-46bf-ba02-b0b4e46722b9",
+            "data": [],
+            "method": "GET",
+            "name": "request"
+        },
+        {
+            "dataMode": "params",
+            "description": "Accepts a GET request for a shortened url on the /stats/ endpoint.\nIt decodes the base64 string and looks it up in the database\nIf found, it loads up the data for the visitors to the URL and renders the 'stats.html' page with the data.",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/stats/{{encoded_url}}",
+            "headers": "",
+            "time": 1535305414748,
+            "id": "b62b76b9-521d-4036-9e68-88f300f14215",
+            "data": [],
+            "method": "GET",
+            "name": "url stats"
+        },
+        {
+            "dataMode": "params",
+            "description": "Accepts a POST request from the /api/ endpoint.\nthe request must be json and contain an element called 'url'\nIt inserts the url to the database and returns the rowid for the new row.\nThe rowid is returned as a base64 encoded string. (acting as the shortened url)\nThis avoids the need for having an algorithm that shortens the url and all issues associated\nwith sed algorithm (i.e. checking for duplicates, issues with distributed deployments and so on)",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/api/",
+            "headers": "",
+            "time": 1535305414747,
+            "id": "4c10fbaf-3174-4546-8525-e28f7e371bad",
+            "data": [],
+            "method": "POST",
+            "name": "encoded url"
+        },
+        {
+            "dataMode": "params",
+            "description": "",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/",
+            "headers": "",
+            "time": 1535305414747,
+            "id": "2a4d8b4c-dde2-402e-adb3-b5ea48b49ffc",
+            "data": [],
+            "method": "POST",
+            "name": "request"
+        },
+        {
+            "dataMode": "params",
+            "description": "",
+            "collectionId": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+            "url": "{{base_url}}/{{encoded_url}}",
+            "headers": "",
+            "time": 1535305414748,
+            "id": "1b86aa46-e7d7-4da7-b85a-6b1e19803a3f",
+            "data": [],
+            "method": "POST",
+            "name": "request"
+        }
+    ],
+    "id": "21df363f-78f5-44ab-b01d-f303d3a3ba88",
+    "order": [
+        "c1e66110-848f-4387-88e4-a66d2ada3ea5",
+        "07fe9980-75b3-4d42-8a8d-b930e257f68a",
+        "3493d466-49bf-46bf-ba02-b0b4e46722b9",
+        "b62b76b9-521d-4036-9e68-88f300f14215",
+        "4c10fbaf-3174-4546-8525-e28f7e371bad",
+        "2a4d8b4c-dde2-402e-adb3-b5ea48b49ffc",
+        "1b86aa46-e7d7-4da7-b85a-6b1e19803a3f"
+    ]
+}
